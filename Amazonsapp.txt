@@ -1,0 +1,38 @@
+#include <stdio.h>
+#define BOARD_S 10
+int gen_board[BOARD_S][BOARD_S];
+void generate_board(int gen_board[BOARD_S][BOARD_S])
+{
+	printf("Generating board \n");
+	printf("Board generated\n");
+}
+
+void place_Amazon(int player)
+{
+	int y, x;
+	printf("Where do you want to place your amazon (y,x):\n ");
+	if (scanf("%d %d", &y, &x))
+	{
+		while (gen_board[y][x] != 0)
+		{
+			printf("Invalid placement. The field is taken.\n");
+			printf("Where do you want to place your amazon (y,x):\n ");
+			scanf("%d %d", &y, &x);
+		}
+		gen_board[y][x] = player;
+		printf("Player %d placed amazon\n", player);
+	}
+}
+int amazons = 7;
+
+int main()
+{
+printf("How many amazons do you want?: ");
+scanf("%d", &amazons);
+for (int i = 0; i<amazons; i++)
+{
+place_Amazon(1);
+place_Amazon(2);
+}
+return 0;
+}
