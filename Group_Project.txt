@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define BOARD_S 10
+//Global Variables
+int gen_board[BOARD_S][BOARD_S];
+int amazons = 7;
+
+void artifacts()
+{
+    int broken_arrow();
+    int horse();
+    int arrow();
+    int spear();
+}
+
+
+void generate_board(){
+    int i,j,number_amazon;
+
+    for (i=0; i<=BOARD_S-1; i++) {
+        for (j=0; j<=BOARD_S-1; j++) {
+            gen_board[i][j]=0;
+        }
+    }
+    for (i=0; i<=BOARD_S-1; i++) {
+
+        for (j=0; j<=BOARD_S-1; j++) {
+            printf("%d",gen_board[i][j]);
+            printf("\t");
+
+        }
+        printf("\n");
+    }
+}
+void place_Amazon(int player)
+{
+    int y, x;
+    printf("Where do you want to place your amazon (y,x):\n ");
+    if (scanf("%d %d", &y, &x))
+    {
+        while (gen_board[y][x] != 0)
+        {
+            printf("Invalid placement. The field is taken.\n");
+            printf("Where do you want to place your amazon (y,x):\n ");
+            scanf("%d %d", &y, &x);
+        }
+        gen_board[y][x] = player;
+        printf("Player %d placed amazon\n", player);
+    }
+}
+
+
+
+
+
+int main()
+{
+    printf("Welcome to Amazon game\n");
+    generate_board();
+    printf("\n");
+    printf("How many amazons do you want?: ");
+    scanf("%d", &amazons);
+    for (int i = 1; i<amazons; i++)
+    {
+    place_Amazon(1);
+    place_Amazon(2);
+    }
+
+return 0;
+}
