@@ -5,13 +5,19 @@
 //Global Variables
 int gen_board[BOARD_S][BOARD_S];
 int amazons = 7;
+int PlayerNow = 1;
 
-void artifacts()
+void artifacts(int player, int gen_board[BOARD_S][BOARD_S])
 {
     int broken_arrow();
     int horse();
     int arrow();
     int spear();
+}
+
+void showBoard(int gen_board[BOARD_S][BOARD_S])
+{
+
 }
 
 
@@ -50,22 +56,53 @@ void place_Amazon(int player)
     }
 }
 
+int MovePossible(int gen_board[][])
+{
+    // function checks if move is possible
+    return 0;
+}
 
-
+void changePlaye(int *player)
+{
+    // function changes players
+}
 
 
 int main()
 {
     printf("Welcome to Amazon game\n");
-    generate_board();
+    generate_board(&gen_board[0]);
     printf("\n");
     printf("How many amazons do you want?: ");
     scanf("%d", &amazons);
     for (int i = 1; i<amazons; i++)
     {
-    place_Amazon(1);
-    place_Amazon(2);
+        showBoard(gen_board);
+        place_Amazon(1);
+        showBoard(gen_board);
+        place_Amazon(2);
     }
+    while(1)
+    {
+        showBoard(gen_board);
+        switch(artifacts)
+        {
+            case broken_arrow:
+            changePlaye(&PlayerNow);
+            break;
+            case spear:
+            // function throwing spear
+            changePlaye(&PlayerNow);
+            break;
+            case horse:
+            // function using horse
+            break;
+            case none:
+            changePlaye(&PlayerNow);
+            break;
+        }
+    }
+
 
 return 0;
 }
