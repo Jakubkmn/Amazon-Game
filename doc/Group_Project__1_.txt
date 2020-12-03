@@ -1,0 +1,108 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define BOARD_S 10
+//Global Variables
+int gen_board[BOARD_S][BOARD_S];
+int amazons = 7;
+int PlayerNow = 1;
+
+void artifacts(int player, int gen_board[BOARD_S][BOARD_S])
+{
+    int broken_arrow();
+    int horse();
+    int arrow();
+    int spear();
+}
+
+void showBoard(int gen_board[BOARD_S][BOARD_S])
+{
+
+}
+
+
+void generate_board(){
+    int i,j,number_amazon;
+
+    for (i=0; i<=BOARD_S-1; i++) {
+        for (j=0; j<=BOARD_S-1; j++) {
+            gen_board[i][j]=0;
+        }
+    }
+    for (i=0; i<=BOARD_S-1; i++) {
+
+        for (j=0; j<=BOARD_S-1; j++) {
+            printf("%d",gen_board[i][j]);
+            printf("\t");
+
+        }
+        printf("\n");
+    }
+}
+void place_Amazon(int player)
+{
+    int y, x;
+    printf("Where do you want to place your amazon (y,x):\n ");
+    if (scanf("%d %d", &y, &x))
+    {
+        while (gen_board[y][x] != 0)
+        {
+            printf("Invalid placement. The field is taken.\n");
+            printf("Where do you want to place your amazon (y,x):\n ");
+            scanf("%d %d", &y, &x);
+        }
+        gen_board[y][x] = player;
+        printf("Player %d placed amazon\n", player);
+    }
+}
+
+int MovePossible(int gen_board[][])
+{
+    // function checks if move is possible
+    return 0;
+}
+
+void changePlaye(int *player)
+{
+    // function changes players
+}
+
+
+int main()
+{
+    printf("Welcome to Amazon game\n");
+    generate_board(&gen_board[0]);
+    printf("\n");
+    printf("How many amazons do you want?: ");
+    scanf("%d", &amazons);
+    for (int i = 1; i<amazons; i++)
+    {
+        showBoard(gen_board);
+        place_Amazon(1);
+        showBoard(gen_board);
+        place_Amazon(2);
+    }
+    while(1)
+    {
+        showBoard(gen_board);
+        switch(artifacts)
+        {
+            case broken_arrow:
+            changePlaye(&PlayerNow);
+            break;
+            case spear:
+            // function throwing spear
+            changePlaye(&PlayerNow);
+            break;
+            case horse:
+            // function using horse
+            break;
+            case none:
+            changePlaye(&PlayerNow);
+            break;
+        }
+    }
+
+
+return 0;
+}
