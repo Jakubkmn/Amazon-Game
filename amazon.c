@@ -145,7 +145,7 @@ int main()
     printf("How many amazons do you want?: ");
     scanf("%d", &amazons);
     showBoard1();
-    for (int i = 1; i<amazons; i++)
+    for (int i = 0; i<amazons; i++)
     {
         showBoard(gen_board);
         place_Amazon(1);
