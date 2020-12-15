@@ -5,7 +5,7 @@ void placeAmazon(int player):
 // if not it places amazon successfully
 
 int MovePossible(int gen_board[BOARD_S][BOARD_S]):
-//function checks if move is possible
+// function checks if move is possible
 // get user input and alter board state
 // by moving the amazon of the specified player
 // this function returns artifact from the tile
@@ -19,3 +19,7 @@ void AmazonMove(int player, int gen_board[BOARD_S][BOARD_S]):
 
 void showBoard(int gen_board[BOARD_S][BOARD_S]):
 // present board to the user
+
+int changePlayer(int *player):
+// function changes player after the other player move
+// value changes from 1 to 2 depending on a player
