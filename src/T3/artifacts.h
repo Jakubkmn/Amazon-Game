@@ -1,4 +1,3 @@
-
 //description of the function is in .c file
 void artifacts(gen_board[BOARD_S][BOARD_S]);
 
