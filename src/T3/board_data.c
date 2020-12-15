@@ -1,4 +1,4 @@
-﻿// ConsoleApplication9.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
+// ConsoleApplication9.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
 //
 
 #include <stdio.h>
