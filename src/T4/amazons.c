@@ -2,7 +2,7 @@
 //scanf_s is used, because im using Visual Studio Community (M.K.)
 //change player function needs work(M.K.)
 // it does not distinct players yet (so every value is one)
-//needs improvement and and changing loop in movement to the infinite one;
+//needs improvement and and changing loop in movement to the infinite one(M.K.)
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
