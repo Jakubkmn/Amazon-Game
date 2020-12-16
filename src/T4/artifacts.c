@@ -6,12 +6,12 @@ void artifacts(struct board tab[15][15], int x, int y)
 	int broken_arrow = 3;
 
 	if(tab[x][y].artif == spear) {
-		printf("spear \n");
+		printf("You have picked up spear \n");
 	} else if(tab[x][y].artif == horse) {
-		printf("horse \n");
+		printf("You have picked up horse \n");
 	} else if(tab[x][y].artif == arrow) {
-		printf("arrow \n");
+		printf("You have picked up arrow \n");
 	} else if(tab[x][y].artif == broken_arrow) {
-		printf("broken arrow \n");
+		printf("You have picked up broken arrow \n");
 	} 
 }
