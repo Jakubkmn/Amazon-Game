@@ -95,3 +95,4 @@ int main()
 			tab[c][b].game = 1;
 			print_board(tab, x, y);
 	}
+}	
