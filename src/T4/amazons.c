@@ -110,7 +110,20 @@ void place(struct board tab[15][15], int amazons, int x, int y, int player)
 
 
 }
+void none(struct board tab[15][15])
+{
+	int vrt, hor = 0;
+	int z = 0;
+	
+	do {
+		printf("Where do you want to shoot arrow?");
+		scanf_s("%d %d", &vrt, &hor);
+		z = !taken(tab, vrt, hor);
+		
+	} while (!z);
+	tab[vrt][hor].game = 9;
 
+}
 void artifacts(struct board tab[15][15], int x, int y)
 {
 	int spear = 1;
@@ -120,12 +133,15 @@ void artifacts(struct board tab[15][15], int x, int y)
 
 	if(tab[x][y].artif == spear) {
 		printf("You picked up spear \n");
+		none(tab);
 	} else if(tab[x][y].artif == horse) {
 		printf("You picked up horse \n");
 	} else if(tab[x][y].artif == arrow) {
 		printf("You picked up arrow \n");
+		none (tab);
 	} else if(tab[x][y].artif == broken_arrow) {
 		printf("You picked up broken arrow \n");
+		
 	} 
 }
 
@@ -137,7 +153,7 @@ void move(struct board tab[15][15],int x,int y,int amazons)
 	for (int i = 0; i < amazons * 2; i++)
 	{
 		do {
-			printf("Which give coordinates of amazon you want to move\n");
+			printf("Give coordinates of amazon you want to move\n");
 			scanf_s("%d %d", &c, &b);
 			up = !taken(tab, c, b);
 		} while (up);
@@ -152,6 +168,7 @@ void move(struct board tab[15][15],int x,int y,int amazons)
 		print_board(tab, x, y);
 		artifacts(tab, c, b);
 		tab[c][b].artif = 0;
+		print_board(tab,x,y);
 	}
 }
 int main()
