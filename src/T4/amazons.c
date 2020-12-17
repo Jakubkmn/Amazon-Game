@@ -124,6 +124,21 @@ void none(struct board tab[15][15])
 	tab[vrt][hor].game = 9;
 
 }
+
+void SPEAR(struct board tab[15][15])
+{
+	int vrt, hor = 0, diag = 0;
+	int z = 0;
+
+	do {
+		printf("where do you wan to shoot spear? ");
+		scanf("%d %d", &vrt, &hor, &diag);
+		z = !taken(tab, vrt, hor);
+
+	}while(!z);
+	tab[vrt][hor].game = 5;
+}
+
 void artifacts(struct board tab[15][15], int x, int y)
 {
 	int spear = 1;
