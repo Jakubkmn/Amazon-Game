@@ -12,7 +12,7 @@ int main()
   int i, j, sorted;
   player temp;
   player p[SIZE]={
-  {"player1", 25, 80},
+  {"player1", 25, 80},     
   {"player2", 55, 21}};
 
   printf("\n\n");
