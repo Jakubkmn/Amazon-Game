@@ -15,3 +15,17 @@ void artifacts(struct board tab[15][15], int x, int y)
 		printf("You have picked up broken arrow \n");
 	} 
 }
+
+void SPEAR(struct board tab[15][15])
+{
+	int vrt, hor = 0, diag = 0;
+	int z = 0;
+
+	do {
+		printf("where do you wan to shoot spear? ");
+		scanf("%d %d", &vrt, &hor, &diag);
+		z = !taken(tab, vrt, hor);
+
+	}while(!z);
+	tab[vrt][hor].game = 5;
+} // implement diagonally shooting
