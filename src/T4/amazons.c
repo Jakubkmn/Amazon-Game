@@ -148,7 +148,7 @@ void artifacts(struct board tab[15][15], int x, int y)
 
 	if(tab[x][y].artif == spear) {
 		printf("You picked up spear \n");
-		none(tab);
+		SPEAR(tab);
 	} else if(tab[x][y].artif == horse) {
 		printf("You picked up horse \n");
 	} else if(tab[x][y].artif == arrow) {
