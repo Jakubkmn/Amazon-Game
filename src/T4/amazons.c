@@ -122,21 +122,23 @@ void none(struct board tab[15][15])
 		
 	} while (!z);
 	tab[vrt][hor].game = 9;
+	//need to add chcecking obstacles(also for movement)
 
 }
 
 void SPEAR(struct board tab[15][15])
 {
-	int vrt, hor = 0, diag = 0;
+	int vrt, hor = 0;//no need for diagonal value
 	int z = 0;
 
 	do {
 		printf("where do you wan to shoot spear? ");
-		scanf("%d %d", &vrt, &hor, &diag);
+		scanf("%d %d", &vrt, &hor);
 		z = !taken(tab, vrt, hor);
 
 	}while(!z);
-	tab[vrt][hor].game = 5;
+	tab[vrt][hor].game = 9;// the number of spear is also 9
+	
 }
 
 void artifacts(struct board tab[15][15], int x, int y)
@@ -148,12 +150,12 @@ void artifacts(struct board tab[15][15], int x, int y)
 
 	if(tab[x][y].artif == spear) {
 		printf("You picked up spear \n");
-		SPEAR(tab);
+		none(tab);
 	} else if(tab[x][y].artif == horse) {
 		printf("You picked up horse \n");
 	} else if(tab[x][y].artif == arrow) {
 		printf("You picked up arrow \n");
-		none (tab);
+		SPEAR(tab);
 	} else if(tab[x][y].artif == broken_arrow) {
 		printf("You picked up broken arrow \n");
 		
