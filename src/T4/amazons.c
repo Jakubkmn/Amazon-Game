@@ -189,6 +189,6 @@ int main()
 	gen_board(tab, x, y);
 	print_board(tab, x, y);
 	place(tab, amazons, x, y, player);
-	move(tab, x, y, amazons);
+	move(tab, x, y, amazons);//should be in infinite loop which breaks when no movement is possible
 
 }
