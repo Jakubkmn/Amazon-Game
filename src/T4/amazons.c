@@ -65,19 +65,18 @@ void print_board(board tab[15][15], int x, int y)
 	//we usually only need to see only first array with the game board.(M.K.)
 }
 
-void change_P(int player)
+void change_P(int *player)
 {
-	if (player == 1)
+	if (*player == 1)
 	{
-		player = 2;
+		*player = 2;
 
 	}
 	else
 	{
-		player = 1;
+		*player = 1;
 	}
 }
-
 
 int taken(struct board tab[15][15], int x, int y)
 {
@@ -103,7 +102,7 @@ void place(struct board tab[15][15], int amazons, int x, int y, int player)
 		tab[c][b].treas = 0;//change to zero when amazon is placed
 
 		print_board(tab, x, y);
-		change_P(player);
+		change_P(&player);
 
 		
 	}
