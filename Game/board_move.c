@@ -14,7 +14,15 @@ int taken(int x, int y)
 {
     return tab[x][y].game != 0;
 }
-
+/**
+ * @brief function for placement phase
+ * 
+ * @param amazons number of amazons
+ * @param player current players
+ * @param max_player 
+ * @param board_x_max 
+ * @param board_y_max 
+ */
 void place(int amazons, int player, int max_player, int board_x_max, int board_y_max)
 {
     int c, b = 0;
@@ -44,7 +52,15 @@ void place(int amazons, int player, int max_player, int board_x_max, int board_y
         change_P(&player, max_player);
     }
 }
-
+/**
+ * @brief checks is obstacle is in line
+ * 
+ * @param a 
+ * @param b 
+ * @param c 
+ * @param d 
+ * @return int 
+ */
 int is_in_line(int a, int b, int c, int d)
 {
     int mx = 0;
@@ -95,7 +111,15 @@ int is_in_line(int a, int b, int c, int d)
 
     return 0;
 }
-
+/**
+ * @brief checks if obstacle is in diagonal
+ * 
+ * @param a 
+ * @param b 
+ * @param c 
+ * @param d 
+ * @return int 
+ */
 int is_diagonal(int a, int b, int c, int d)
 {
     if (c - a == d - b)
@@ -140,7 +164,15 @@ int is_diagonal(int a, int b, int c, int d)
 
     return 0;
 }
-
+/**
+ * @brief function for checking if player can move
+ * 
+ * @param from_x 
+ * @param from_y 
+ * @param to_x current x position
+ * @param to_y current y position
+ * @return int 
+ */
 int can_move(int from_x, int from_y, int to_x, int to_y)
 {
     if (is_in_line(from_x, from_y, to_x, to_y) || is_diagonal(from_x, from_y, to_x, to_y))
@@ -148,7 +180,15 @@ int can_move(int from_x, int from_y, int to_x, int to_y)
 
     return 0;
 }
-
+/**
+ * @brief movement phase
+ * 
+ * @param amazons number of amazons
+ * @param player number of players
+ * @param points number of points
+ * @param board_x_max 
+ * @param board_y_max 
+ */
 void movement(int amazons, int player, int points[9], int board_x_max, int board_y_max)
 {
     int up = 1;
@@ -201,7 +241,12 @@ void movement(int amazons, int player, int points[9], int board_x_max, int board
     tab[end_x][end_y].treas = 0;
     print_board(board_x_max, board_y_max);
 }
-
+/**
+ * @brief function for changing player
+ * 
+ * @param player number of players
+ * @param max_player 
+ */
 void change_P(int *player, int max_player)
 {
     if (*player < max_player)
@@ -213,7 +258,14 @@ void change_P(int *player, int max_player)
         *player = 1;
     }
 }
-
+/**
+ * @brief checks if amazon can move
+ * 
+ * @param tab 
+ * @param x current x coordinate
+ * @param y current y coordinate
+ * @return int 
+ */
 int canAmazonMove(struct board tab[15][15], int x, int y)
 {
    
