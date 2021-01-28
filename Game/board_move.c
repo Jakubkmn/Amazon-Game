@@ -3,7 +3,13 @@
 #include "board.h"
 #include "artifacts.c"
 #include "board_move.h"
-
+/**
+ * @brief used in place funtion to check whenever the field on the board is occupied
+ * 
+ * @param x current position
+ * @param y current position
+ * @return int 
+ */
 int taken(int x, int y)
 {
     return tab[x][y].game != 0;

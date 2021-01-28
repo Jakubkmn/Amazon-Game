@@ -19,5 +19,5 @@ void generate_board()
 
         }
         printf("\n");
-    } //llbvlbl
+    } //llbvlbls
 }

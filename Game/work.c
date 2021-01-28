@@ -9,7 +9,12 @@ int points[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 int board_x_max = 10;
 int board_y_max = 10;
-
+/**
+ * @brief main function which handles all the files
+ * @note calls to functions change_P, gen_board, place, print_board, movement
+ * 
+ * @return int 
+ */
 int main()
 {
     int player = 1;
