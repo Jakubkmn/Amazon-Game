@@ -1,6 +1,9 @@
 #include "board.h"
 #include "board_move.h"
-
+/**
+ * @brief if player did not pick up any artifact
+ * 
+ */
 void none()
 {
     int vrt, hor = 0;
@@ -14,9 +17,11 @@ void none()
 
     } while (!z);
     tab[vrt][hor].game = 9;
-    //need to add chcecking obstacles(also for movement)
 }
-
+/**
+ * @brief function for shooting spear
+ * 
+ */
 void SPEAR()
 {
     int vrt, hor = 0;
@@ -31,7 +36,15 @@ void SPEAR()
     } while (!z);
     tab[vrt][hor].game = 9; // the number of spear is also 9
 }
-
+/**
+ * @brief function for moving horse
+ * 
+ * @param x current coordinate
+ * @param y current coordinate
+ * @param amazons number of amazons
+ * @param player current player
+ * @param points current points
+ */
 void move_H(int x, int y, int amazons, int player, int points[9])
 {
     int c, b = 0;
@@ -53,14 +66,30 @@ void move_H(int x, int y, int amazons, int player, int points[9])
     printf("You have %d points\n", points[player]);
     tab[c][b].treas = 0;
 }
-
+/**
+ * @brief function for horse
+ * 
+ * @param x current coordinate
+ * @param y current coordinate
+ * @param amazons number of amazons
+ * @param player current player
+ * @param points number of points
+ */
 void HORSE(int x, int y, int amazons, int player, int points[9])
 {
     none();
     tab[x][y].game = 0;
     move_H(x, y, amazons, player, points);
 }
-
+/**
+ * @brief function for artifacts
+ * 
+ * @param x 
+ * @param y 
+ * @param amazons 
+ * @param player 
+ * @param points 
+ */
 void artifacts(int x, int y, int amazons, int player, int points[9])
 {
 

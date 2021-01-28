@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "board.h"
-
+/**
+ * @brief function generates board 
+ * 
+ * @param board_x_max 
+ * @param board_y_max 
+ */
 void gen_board(int board_x_max, int board_y_max)
 {
     int max_artif = 4;
@@ -18,7 +23,12 @@ void gen_board(int board_x_max, int board_y_max)
         }
     }
 }
-
+/**
+ * @brief function for printing board
+ * 
+ * @param board_x_max 
+ * @param board_y_max 
+ */
 void print_board(int board_x_max, int board_y_max)
 {
     printf("  ");
