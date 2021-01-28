@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "board.h"
+#include "board_generate.h"
 #include "artifacts.c"
 #include "board_move.h"
+
 /**
  * @brief used in place funtion to check whenever the field on the board is occupied
  * 

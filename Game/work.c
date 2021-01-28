@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "board_generate.c"
-#include "board_move.c"
+#include "board_generate.h"
+#include "board_move.h"
 #include "board.h"
 
 int points[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
