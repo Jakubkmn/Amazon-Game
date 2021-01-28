@@ -216,8 +216,7 @@ void change_P(int *player, int max_player)
 
 int canAmazonMove(struct board tab[15][15], int x, int y)
 {
-    // takes coordinates of amazon on the board
-    // and returns whether it can move
+   
     int can_move = 0;
     if (tab[x - 1][y - 1].game == 0)
     {
@@ -255,7 +254,3 @@ int canAmazonMove(struct board tab[15][15], int x, int y)
     return can_move;
 }
 
-int ruch(struct board tab[15][15], int x, int y, int player)
-{
-    return tab[x][y].game != player;
-}
